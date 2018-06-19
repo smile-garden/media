@@ -1,0 +1,6 @@
+{
+	"component": true,
+	"usingComponents": {
+		"media-dialog": "/components/dialog/dialog"
+	}
+}

@@ -1,0 +1,5 @@
+<block wx:if="{{show}}">
+	<view class="dialog_mask">
+		<button type="default" class="user_btn" open-type="getUserInfo" bindgetuserinfo="goLogin">{{content}}</button>
+	</view>
+</block>

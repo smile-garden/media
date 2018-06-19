@@ -1,0 +1,8 @@
+{
+	"component": true,
+	"enablePullDownRefresh": true,
+	"navigationBarTitleText": "等你来听歌",
+	"usingComponents": {
+		"loadmore": "/components/loadmore/loadmore"
+	}
+}
