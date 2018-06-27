@@ -1,1 +1,5 @@
-{}
+{
+	"navigationBarTitleText": "听音乐看故事",
+	"component": true,
+	"usingComponents": {}
+}

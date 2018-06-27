@@ -1,14 +1,37 @@
 <import src="../../../utils/wxParse/wxParse.wxml"/>
-<view class="container">
+<view class="container {{isLoading ? '' : 'hidden'}}">
 	<view class="text-detail">
 		<view class="music_box">
 			<view class='music_bg_b'></view>
-      <view class="music_bg_s" style='background-image:url({{content.cover}})'></view>
-      <view catchtap="onMusicTap" class="play-btn"></view>
+      <view class="music_bg_s {{isPlay ? '' : 'cd_rotate' }}" style='background-image:url({{content.cover}})'></view>
+      <view catchtap="onMusicTap" class="play-btn {{isLoading ? 'loading' : ''}} {{isPlay ? 'on' : ''}}"></view>
 		</view>
 	</view>
-	<view class="title"></view>
-	<view class="author-date"></view>
-	<view class="tool"></view>
-	<view class="detail"></view>
+	<view class="title">{{content.story_title}}</view>
+	<view class="author-date">
+		<image class="avatar" src="{{content.story_author.web_url}}"></image>
+		<text class="author">{{content.story_author.user_name}}</text>
+		<text class="const-text">音乐故事发表于XXX</text>
+		<view class="singer">
+			<text class="name">歌手  {{content.author.user_name}}</text>
+			<text class="song"> /{{content.title}}</text>
+		</view>
+	</view>
+	<view class="tool">
+		<view class="circle-img">
+			<view class="collected"></view>
+			<image catchtap="onCollectionTap" src="{{collected ? '/images/icon/collection.png' : '/images/icon/collection-anti.png'}}"></image>
+			<image catchtap="onShareTap" class="share-img" src="/images/icon/share.png"></image>
+		</view>
+		<view class="horizon"></view>
+	</view>
+	<view class="detail">
+		<template is="wxParse" data="{{wxParseData:artice.nodes}}"></template>
+	</view>
+</view>
+
+
+<view class="wrapper">
+	<view class="title">微信自带富文本组件</view>
+	<rich-text nodes="{{nodes}}"></rich-text>
 </view>

@@ -28,12 +28,17 @@ wx.getSystemInfo({
 /**
  * 主函数入口区
  **/
+/*bindName绑定的数据名
+type可以为html或者md
+data为传入的具体数据
+target为page对象，一般为this
+imagePadding为当图片自适应时左右的单一padding(默认为0，可选)*/
 function wxParse(bindName = 'wxParseData', type='html', data='<div class="color:red;">数据不能为空</div>', target,imagePadding) {
   var that = target;
   var transData = {};//存放转化后的数据
   if (type == 'html') {
     transData = HtmlToJson.html2json(data, bindName);
-    console.log(JSON.stringify(transData, ' ', ' '));
+    // console.log(JSON.stringify(transData, ' ', ' '));
   } else if (type == 'md' || type == 'markdown') {
     var converter = new showdown.Converter();
     var html = converter.makeHtml(data);
