@@ -1,0 +1,14 @@
+<template name="swiperTemplate">
+	<view class="swiper-container">
+		<swiper circular="true" indicator-dots="true" indicator-active-color="#f30" autoplay="true" interval="2000">
+			<block wx:for="{{swiperList}}" wx:if="{{index < 5}}" wx:key="index">
+				<swiper-item bindtap="onSwiperTap" data-item="{{item}}">
+					<view class="wrap-img" style="background-image: url({{item.thumbnails}})"></view>
+					<view class="filter" wx:if="{{isTitle}}">
+						<text>{{item.title}}</text>
+					</view>
+				</swiper-item>
+			</block>
+		</swiper>
+	</view>
+</template>

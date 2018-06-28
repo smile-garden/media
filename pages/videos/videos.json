@@ -1,3 +1,8 @@
 {
-	"navigationBarTitleText": "视频集锦"
+	"component": true,
+	"navigationBarTitleText": "视频集锦",
+	"enablePullDownRefresh": true,
+	"usingComponents": {
+		"loadmore": "/components/loadmore/loadmore"
+	}
 }

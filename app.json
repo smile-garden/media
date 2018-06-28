@@ -4,6 +4,7 @@
     "pages/music/music",
     "pages/welcome/welcome",
     "pages/videos/videos",
+    "pages/videos/video-detail/video-detail",
     "pages/review/review",
     "pages/logs/logs",
     "pages/music/music-detail/music-detail"

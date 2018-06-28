@@ -19,6 +19,18 @@
 				<text class="date">{{item.post_date}}</text>
 			</view>
 		</block>
+		<!-- 视频 -->
+		<block wx:if="{{style_type === 2}}">
+			<view class="movie-list" catchtap="openDetail" data-list="{{item}}">
+				<view class="wrap-img" style="background-image: url({{item.thumbnails[0].url}})">
+					<view class="btn"></view>
+				</view>
+				<view class="video-des">
+					<text class="video_title">{{item.title}}</text>
+					<text class="time">{{item.create_time}}</text>
+				</view>
+			</view>
+		</block>
 	</block>
 	<block>
 		<loadmore wx:if="{{hasMore}}" icon="{{true}}"></loadmore>
