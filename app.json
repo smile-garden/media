@@ -6,6 +6,9 @@
     "pages/videos/videos",
     "pages/videos/video-detail/video-detail",
     "pages/review/review",
+    "pages/review/more-movie/more-movie",
+    "pages/review/review-detail/review-detail",
+    "pages/review/search/search",
     "pages/logs/logs",
     "pages/music/music-detail/music-detail"
   ],
@@ -17,7 +20,7 @@
   },
   "tabBar": {
     "color": "#999",
-    "selectColor": "#5080f3",
+    "selectedColor": "#5080f3",
     "backgroundColor": "#fff",
     "list": [
       {

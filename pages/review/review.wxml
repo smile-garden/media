@@ -1,2 +1,22 @@
-<!--pages/review/review.wxml-->
-<text>pages/review/review.wxml</text>
+<import src="movie-list/movie-list-template.wxml" />
+<import src="/components/swiper/swiper-template.wxml" />
+<view class="search-bar">
+	<input type="text" class="search-txt" placeholder-class="search-txt-plc" placeholder="请输入关键词搜索" bindfocus="viewSearch" />
+</view>
+<view class="container hidden">
+	<view>
+		<template is="swiperTemplate" data="{{swiperList: swiperList}}"></template>
+	</view>
+	<view class="movies-template">
+		<template is="movieListTemplate" data="{{...inTheaters}}"></template>
+	</view>
+	<view class="movies-template">
+		<template is="movieListTemplate" data="{{...comingSoon}}"></template>
+	</view>
+	<view class="movies-template">
+		<template is="movieListTemplate" data="{{...top250}}"></template>
+	</view>
+</view>
+<view class="search-panel">
+	<template></template>
+</view>

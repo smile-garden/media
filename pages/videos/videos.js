@@ -18,8 +18,15 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.initSwiper();  // 加载轮播图
-    this.getList('down');
+    let token = wx.getStorageSync('token');
+    if (token) {
+      this.initSwiper();  // 加载轮播图
+      this.getList('down');
+    } else {
+      wx.navigateTo({
+        url: '/pages/index/index'
+      })
+    }
   },
   // 获取视频列表
   getList: function (type) {

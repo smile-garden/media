@@ -38,9 +38,31 @@ const $get = (url, data) => {
   })
 }
 
+const convertToStarsArray = (average) => {
+  const LENGTH = 5;
+  const CLS_ON = 'on'; // 全星
+  const CLS_HALF = 'half'; // 半星
+  const CLS_OFF = 'off'; // 无星
+  let result = [];
+  let score = Math.round(average) / 2;
+  let hasDecimal = score % 1 !==0;  // 是不是整数
+  let integer = Math.floor(score); // 向下取整
+  for (let i = 0; i < integer; i++) {
+    result.push(CLS_ON)
+  }
+  if (hasDecimal) {
+    result.push(CLS_HALF)
+  };
+  while (result.length < LENGTH) {
+    result.push(CLS_OFF)
+  }
+  return result;
+}
+
 module.exports = {
   wxParse,
   formatTime,
   yymmdd,
-  $get
+  $get,
+  convertToStarsArray
 }

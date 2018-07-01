@@ -1,0 +1,18 @@
+<import src="../movie/movie-template.wxml" />
+<template name="movieGridTemplate">
+	<view class="list">
+		<block wx:for="{{movieList}}" wx:for-item="movie" wx:key="index">
+			<view class="single-view-container">
+				<template is="movieTemplate" data="{{...movie}}"></template>
+			</view>
+		</block>
+		<view class="loadmore_template">
+			<loadmore wx:if="{{hasMore}}" is-end="{{hasMore}}" text="没有了" icon="/images/icon/dog.png"></loadmore>
+			<loadmore wx:if="{{isLoading}}" icon="{{true}}"></loadmore>
+		</view>
+	</view>
+	<view class="abnor__box" wx:if="{{noData}}">
+		<image class="abnor__image" src="/images/icon/no.png" mode="widthFix"></image>
+		<view class="abnor__text">没有相关数据哦！</view>
+	</view>
+</template>
