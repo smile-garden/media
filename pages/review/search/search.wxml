@@ -1,2 +1,17 @@
-<!--pages/review/search/search.wxml-->
-<text>pages/review/search/search.wxml</text>
+<view class="search-hd">
+	<view class="search-area">
+		<form bindsubmit="searchA">
+			<view class="search-type" bindtap="changeSearchType">{{searchType == 'keyword' ? '默认' : '类型'}}</view>
+			<input type="text" class="search-txt" name="keyword" confirm-type="search" bindconfirm="searchB" placeholder="{{searchType == 'keyword' ? '请输入电影、演员 或导演' : '请输入影片类型，如：爱情、喜剧'}}" />
+			<button class="search-btn" formType="submit">搜索</button>
+		</form>
+	</view>
+	<view class="search-keyword" wx:if="{{hotKeyword && hotTag}}">
+		<view class="search-keyword-title">热门搜索</view>
+		<view class="search-keyword-item" wx:for="{{hotKeyword}}" wx:for-item="hotKeywordItem" wx:key="index" data-keyword="{{hotKeywordItem.title}}" bindtap="searchByKeyword">{{
+		hotKeywordItem.title
+		}}</view>
+		<view class="search-keyword-title">热门标签</view>
+		<view class="search-keyword-item" wx:for="{{hotTag}}" wx:for-item="hotTagItem" wx:key="hotTagItem" data-keyword="{{hotTagItem}}" bindtap="searchByTag">{{hotTagItem}}</view>
+	</view>
+</view>

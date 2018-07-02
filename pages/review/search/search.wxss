@@ -1,1 +1,70 @@
-/* pages/review/search/search.wxss */
+.search-hd{
+	width: 100%;
+	height: 140rpx;
+	background-color: #fff;
+	border-bottom: 1px solid #f8f8f8;
+}
+.search-area{
+	box-sizing: border-box;
+	position: relative;
+	margin: 30rpx;
+}
+.search-type{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 120rpx;
+	height: 80rpx;
+	text-align: center;
+	line-height: 80rpx;
+	font-size: 28rpx;
+	border-right: 1px solid #eee;
+}
+.search-txt{
+	box-sizing: border-box;
+	padding-left: 140rpx;
+	padding-right: 20rpx;
+	width: 100%;
+	height: 80rpx;
+	border-radius: 10rpx;
+	border: 1px solid #eee;
+	font-size: 28rpx;
+}
+.search-btn{
+	position: absolute;
+	top: 0;
+	right: 0;
+	z-index: 11;
+	width: 120rpx;
+	height: 80rpx;
+	text-align: center;
+	line-height: 80rpx;
+	font-size: 28rpx;
+	border-right: 1px solid #eee;	
+	border-top-left-radius: 0;
+	border-bottom-left-radius: 0;
+}
+.search-btn::after{
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+}
+.search-keyword{
+	padding: 30rpx;
+}
+.search-keyword-title{
+	padding-left: 20rpx;
+	margin-top: 40rpx;
+	margin-bottom: 20rpx;
+	font-size: 30rpx;
+	border-left: 10rpx solid #5080f3;
+}
+.search-keyword-item{
+	display: inline-block;
+	margin: 0 10rpx 10rpx 0;
+	padding: 10rpx;
+	background-color: #fbfbfb;
+	border: 1px solid #ccc;
+	border-radius: 12rpx;
+	font-size: 28rpx;
+	color: #666;
+}

@@ -29,7 +29,7 @@ Page({
   // 进入搜索页
   viewSearch: function () {
     wx.navigateTo({
-      url: 'search/search'
+      url: "/pages/review/search/search"
     })
   },
   // 更多
